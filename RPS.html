@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<body>
+    <script>
+
+    function computerPlay(){
+        let choices = ['rock','paper','scissors'];
+        result = choices[Math.floor(Math.random() * choices.length)];
+        return result;
+
+    }
+   computerPlay()
+
+   function playerSelection(){
+       let selection = prompt('Rock, paper, or scissors?');
+       var pos = selection.length;
+       if (pos == 4){
+           result = 'rock';
+       } else if (pos == 5){
+           result = 'paper'
+       } else if (pos == 8){
+           result = 'scissors'
+       }
+       return result
+   }
+
+   playerSelection()
+
+   function playRound(playerSelection, computerSelection) {
+	// your code here!
+}
+
+const computerSelection = computerPlay()
+   
+
+    </script>
+
+</body>
