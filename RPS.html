@@ -9,8 +9,9 @@
 
     }
    computerPlay()
+   const computerSelection = computerPlay()
 
-   function playerSelection(){
+   function playerPlay(){
        let selection = prompt('Rock, paper, or scissors?');
        var pos = selection.length;
        if (pos == 4){
@@ -23,13 +24,36 @@
        return result
    }
 
-   playerSelection()
+   const playerSelection = playerPlay()
+   let statement1 = 'You win!';
+   let statement2 = "You lose!";
+   let statement3 = 'Rock beats scissors.';
+   let statement4 = 'Paper beats rock';
+   let statement5 = 'Scissors beats paper';
 
    function playRound(playerSelection, computerSelection) {
-	// your code here!
-}
+   
+	let message = ((playerSelection =='rock') && (computerSelection == 'scissors'))?
+    alert (statement1 + statement3) : 
+    ((playerSelection == 'rock')&&(computerSelection == 'paper'))?
+    alert (statement2 + statement4) :
+    ((playerSelection == 'paper')&&(computerSelectio == 'rock'))?
+    alert (statement1 + statement4) :
+    ((playerSelection == 'paper')&&(computerSelection == 'scissors'))?
+    alert (statement2 + statement5) :
+    ((playerSelection == 'scissors')&&(computerSelection == 'paper'))?
+    alert (statement1 + statement5) :
+    ((playerSelection == 'scissors')&&(computerSelection == 'rock'))?
+    alert (statement2 + statement3) : 
+    (((playerSelection =='rock')&&(computerSelection == 'rock'))||
+    ((playerSelection == 'paper')&&(computerSelection =='paper'))||
+    ((playerSelection =='scissors')&&(computerSelection =='scissors')))?
+    alert ('It\'s a tie!') :
+    alert('That doesn\'t make sense');
+    return message;
+    }
+playRound()
 
-const computerSelection = computerPlay()
    
 
     </script>
