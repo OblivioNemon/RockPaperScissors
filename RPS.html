@@ -30,7 +30,9 @@
    let statement3 = 'Rock beats scissors.';
    let statement4 = 'Paper beats rock';
    let statement5 = 'Scissors beats paper';
-
+   let playerScore = 0;
+   let computerScore = 0;
+   
    function playRound(playerSelection, computerSelection) {
    
 	let message = ((playerSelection =='rock') && (computerSelection == 'scissors'))?
@@ -50,10 +52,32 @@
     ((playerSelection =='scissors')&&(computerSelection =='scissors')))?
     alert ('It\'s a tie!') :
     alert('That doesn\'t make sense');
+    if 
+    (((playerSelection =='rock')&&(computerSelection == 'scissors'))||
+    ((playerSelection == 'paper')&&(computerSelection =='rock'))||
+    ((playerSelection =='scissors')&&(computerSelection =='paper')))
+    {++playerScore;}
+    else if
+    (((playerSelection =='scissors')&&(computerSelection == 'rock'))||
+    ((playerSelection == 'rock')&&(computerSelection =='paper'))||
+    ((playerSelection =='paper')&&(computerSelection =='scissors')))
+    {++computerScore;};
     return message;
     }
-playRound(playerSelection, computerSelection)
+    playRound(playerSelection, computerSelection);
 
+    function game(){
+        let playerScore = 0;
+        let computerScore = 0;
+        playRound(playerSelection, computerSelection);
+        playRound(playerSelection, computerSelection);
+        playRound(playerSelection, computerSelection);
+        playRound(playerSelection, computerSelection);
+        playRound(playerSelection, computerSelection);
+        
+
+
+    }
    
 
     </script>
