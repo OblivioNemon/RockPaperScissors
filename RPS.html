@@ -1,16 +1,13 @@
 <!DOCTYPE html>
 <body>
     <script>
-
     function computerPlay(){
         let choices = ['rock','paper','scissors'];
         result = choices[Math.floor(Math.random() * choices.length)];
         return result;
-
     }
-   computerPlay()
-   const computerSelection = computerPlay()
-
+   
+   
    function playerPlay(){
        let selection = prompt('Rock, paper, or scissors?');
        var pos = selection.length;
@@ -23,18 +20,18 @@
        }
        return result
    }
-
-   const playerSelection = playerPlay()
+   
    let statement1 = 'You win!';
    let statement2 = "You lose!";
    let statement3 = 'Rock beats scissors.';
    let statement4 = 'Paper beats rock';
    let statement5 = 'Scissors beats paper';
-   let playerScore = 0;
-   let computerScore = 0;
+   playerScore = 0;
+   computerScore = 0;
    
-   function playRound(playerSelection, computerSelection) {
-   
+   function playRound() {
+    let playerSelection = playerPlay();
+    let computerSelection = computerPlay();
 	let message = ((playerSelection =='rock') && (computerSelection == 'scissors'))?
     alert (statement1 + statement3) : 
     ((playerSelection == 'rock')&&(computerSelection == 'paper'))?
@@ -56,30 +53,37 @@
     (((playerSelection =='rock')&&(computerSelection == 'scissors'))||
     ((playerSelection == 'paper')&&(computerSelection =='rock'))||
     ((playerSelection =='scissors')&&(computerSelection =='paper')))
-    {++playerScore;}
+    {playerScore++;}
     else if
     (((playerSelection =='scissors')&&(computerSelection == 'rock'))||
     ((playerSelection == 'rock')&&(computerSelection =='paper'))||
     ((playerSelection =='paper')&&(computerSelection =='scissors')))
-    {++computerScore;};
+    {computerScore++;};
     return message;
     }
-    playRound(playerSelection, computerSelection);
-
+    
     function game(){
-        let playerScore = 0;
-        let computerScore = 0;
-        playRound(playerSelection, computerSelection);
-        playRound(playerSelection, computerSelection);
-        playRound(playerSelection, computerSelection);
-        playRound(playerSelection, computerSelection);
-        playRound(playerSelection, computerSelection);
-        
+        playerScore === 0;
+        computerScore === 0;
+        playRound(); 
+        playRound();        
+        playRound();       
+        playRound();
+        playRound();
+        if (playerScore > computerScore){
+            alert('You win the game!')
+        }
+        else if (playerScore < computerScore) {
+            alert('You lost the game!')
+        }
+        else {
+            alert('It\'s a tie game!')
+        }
 
-
+       
     }
+    game();
    
-
     </script>
 
 </body>
